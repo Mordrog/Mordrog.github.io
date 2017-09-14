@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+  <title>Data visualization</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="vis/vis-network.min.js"></script>
+  <script>
+  $( function() {
+    $( 'input[class="checkbox"]' ).checkboxradio({
+      icon: false
+    });
+  } );
+  </script>
+  <link href="vis/vis-network.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/jquery-ui.min.css" rel="stylesheet" />
+ <style>
+  body {background-color: yellowgreen;};
+  * {
+   box-sizing: border-box; 
+  }
+  body {
+    margin: 0;
+  }
+  #main {
+    display: flex;
+    min-height: calc(100vh - 40vh);
+  }
+  #main > article {
+    flex: 1;
+	background: #E5E4D7;
+
+  }
+  #main > nav{
+    flex: 0 0 10vw;
+    background: beige;
+  }
+  #main > aside {
+    flex: 0 0 30vw;
+	padding: 1em 1em 0em 1em;
+    background: #C5C5C5;
+	
+  }
+  #main > nav {
+    order: -1;
+  }
+  article, nav{
+    padding: 1em;
+  }
+  header{
+	display: flex;
+    background: yellowgreen;
+    height: 10vh;
+  }
+  footer {
+    background: yellowgreen;
+    height: 3vh;
+  }
+</style>
+
+</head>
+
+<body>
+  <header><h1>Data visualization with Vis.js</h1></header>
+  <div id="main">
+    <article>
+		<div id="articleMenu">
+			<p id="topic">U.S Airports and Airfares Map</p>
+			<div id="fullScreen" class="articleMenuButton">
+				<img border="0" alt="FullScreen" src="img/fullscreen.png" width="25" height="20">
+			</div>
+			<div id="centerScreen" class="articleMenuButton">
+				<img border="0" alt="FullScreen" src="img/centerscreen.png" width="25" height="20">
+			</div>
+		</div>
+
+		<div id="mynetwork" class="networkNormalScreen"></div>
+		
+		<div id="articleBottom">
+			<label for="radio-week" class="articleWeekButton tabToLeft leftBorder"><div>Week</div></label>
+			<input type="radio" name="radio-weekdays" id="radio-week"  class="checkbox" checked>
+			<label for="radio-mon" class="articleWeekButton tabToLeft middleBorder"><div>Monday</div></label>
+			<input type="radio" name="radio-weekdays" id="radio-mon"  class="checkbox">
+			<label for="radio-tus" class="articleWeekButton tabToLeft middleBorder"><div>Tuesday</div></label>
+			<input type="radio" name="radio-weekdays" id="radio-tus"  class="checkbox">
+			<label for="radio-wed" class="articleWeekButton tabToLeft middleBorder"><div>Wednesday</div></label>
+			<input type="radio" name="radio-weekdays" id="radio-wed"  class="checkbox">
+			<label for="radio-thu" class="articleWeekButton tabToLeft middleBorder"><div>Thursday</div></label>
+			<input type="radio" name="radio-weekdays" id="radio-thu"  class="checkbox">
+			<label for="radio-fri" class="articleWeekButton tabToLeft middleBorder"><div>Friday</div></label>
+			<input type="radio" name="radio-weekdays" id="radio-fri"  class="checkbox">
+			<label for="radio-sat" class="articleWeekButton tabToLeft middleBorder"><div>Saturday</div></label>
+			<input type="radio" name="radio-weekdays" id="radio-sat"  class="checkbox">
+			<label for="radio-sun" class="articleWeekButton rightBorder"><div>Sunday</div></label>
+			<input type="radio" name="radio-weekdays" id="radio-sun"  class="checkbox">
+		</div>
+	</article>
+    <nav>
+		<p id="navTopic">Weights</p>
+		<p id = "buttonNone" class="navButton">None</p>
+		<p id = "buttonTraffic" class="navButton">Traffic</p>
+		<p id = "buttonArrDelay" class="navButton">Arrive Delay</p>
+		<p id = "buttonDepDelay" class="navButton">Departure Delay</p>
+	</nav>
+    <aside>
+		<div id="asideMenu">
+			<div id="contentTab" class="asideMenuTab tabToLeft"><p>Content</p></div>
+			<div id="nodeTab" class="asideMenuTab tabToLeft"><p>Nodes</p></div>
+			<div id="edgeTab" class="asideMenuTab"><p>Edges</p></div>
+		</div>
+		<div id="networkOptions">
+		</div>
+		<div id="networkNodeContent">
+			<div class="optionTopic">node content</div>
+			<br><br>
+			<div class="noNodeSelected">No node selected!</div>
+		</div>
+	</aside>
+  </div>
+  <footer></footer>
+
+
+	<img id="MapPic" src="img/map.png"  style="display: none;">
+	
+
+
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/fullScreen.js"></script>
+</body>
+</html>
+
+
