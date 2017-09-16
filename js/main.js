@@ -150,7 +150,7 @@ function changeWeight(attribute)
 	
 	if(attribute === undefined){
 		nodes_temp = nodes.map(function(node) {
-					node["size"] = 20;
+					node["size"] = 30;
 					return node;
 				});
 		nodes.clear();
