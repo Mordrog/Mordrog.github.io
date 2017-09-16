@@ -10,6 +10,7 @@ var data = {
 	nodes: nodes,
     edges: edges
 };
+
 var options = {
     nodes: {
       shape: 'dot',
@@ -118,42 +119,34 @@ $("input[name='radio-weekdays']").on("change", function () {
     switch(this.id){
 		case 'radio-week':
 			loadData("airfare_all.json");
-			weekdayIndex = 0;
 			break;
 		case 'radio-mon':
 			loadData("airfare_1mon.json");
-			weekdayIndex = 1;
 			break;
 		case 'radio-tus':
 			loadData("airfare_2tus.json");
-			weekdayIndex = 2;
 			break;
 		case 'radio-wed':
 			loadData("airfare_3wed.json");
-			weekdayIndex = 3;
 			break;
 		case 'radio-thu':
 			loadData("airfare_4thu.json");
-			weekdayIndex = 4;
 			break;
 		case 'radio-fri':
 			loadData("airfare_5fri.json");
-			weekdayIndex = 5;
 			break;
 		case 'radio-sat':
 			loadData("airfare_6sat.json");
-			weekdayIndex = 6;
 			break;
 		case 'radio-sun':
 			loadData("airfare_7sun.json");
-			weekdayIndex = 7;
 			break;
 	}
 });
 
 function changeWeight(attribute)
- {
-	var nodes_temp = nodes;
+{
+	var nodes_temp;
 	
 	if(attribute === undefined){
 		nodes_temp = nodes.map(function(node) {
@@ -186,7 +179,7 @@ function changeWeight(attribute)
 			});
 	nodes.clear();
 	nodes.add(nodes_temp);
- }
+}
   
 /* Nav buttons */
 var weightType = [,"Traffic", "Arrive delay", "Departure delay"];
